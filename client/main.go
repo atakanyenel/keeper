@@ -33,7 +33,7 @@ func getSingleHost(hostname string) string {
 		//handle error
 	}
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, _ := ioutil.ReadAll(resp.Body)
 	response := string(body)
 	return response
 }
@@ -43,7 +43,7 @@ func getAllHosts() string {
 		// handle error
 	}
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, _ := ioutil.ReadAll(resp.Body)
 	response := string(body)
 	response = strings.TrimSpace(response)
 	return response
